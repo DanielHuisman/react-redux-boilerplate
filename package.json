@@ -1,0 +1,19 @@
+{
+  "name": "@danielhuisman/react-redux-boilerplate",
+  "description": "Boilerplate for React + Redux + Webpack + Hot Loader. Highly opinionated as it's intended for personal use.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "author": "Daniel Huisman <daniel@huisman.me> (https://danielhuisman.io)",
+  "repository": "https://github.com/DanielHuisman/react-redux-boilerplate.git",
+  "keywords": [
+    "react",
+    "redux",
+    "webpack",
+    "hotloader",
+    "boilerplate"
+  ],
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}

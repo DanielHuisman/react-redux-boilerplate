@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+
+.env
+.flowconfig
+
+*.log
+*.log.*
+
+Thumbs.db
+.DS_Store
