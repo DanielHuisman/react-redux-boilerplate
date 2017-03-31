@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="shortcut icon" type="image/x-icon" href="{{=it.staticUrl}}/favicon.ico">
+
+        <title>Application</title>
+    </head>
+    <body style="margin: 0px;">
+        <div id="root"></div>
+        <script type="application/javascript" src="{{=it.bundleUrl}}/bundle.js"></script>
+    </body>
+</html>
