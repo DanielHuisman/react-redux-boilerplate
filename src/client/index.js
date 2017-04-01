@@ -7,9 +7,7 @@ import Root from './containers/Root';
 // Render a component using React
 const render = (Component) => {
     ReactDOM.render(
-        <AppContainer>
-            <Component />
-        </AppContainer>,
+        <AppContainer component={Component} />,
         document.getElementById('root')
     );
 };
@@ -19,5 +17,8 @@ render(Root);
 
 // Set up hot loading if enabled
 if (module.hot) {
-    module.hot.accept('./containers/Root', () => render(Root));
+    module.hot.accept('./containers/Root', () => {
+        const NewRoot = require('./containers/Root').default;
+        render(NewRoot);
+    });
 }
