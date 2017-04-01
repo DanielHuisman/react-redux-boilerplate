@@ -10,8 +10,9 @@ import {devMiddleware, hotMiddleware} from 'koa-webpack-middleware';
 import webpackConfig from '../../webpack.development';
 import {rootDir, templates} from './common';
 import config from './config';
+import logger, {middleware as logMiddleware} from './logger';
 
-console.log('Server starting...');
+logger.info('Server starting...');
 
 // Compile Webpack config
 const compiledWebpackConfig = webpack(webpackConfig);
@@ -19,6 +20,9 @@ const compiledWebpackConfig = webpack(webpackConfig);
 // Initialize app and router
 const app = new Koa();
 const router = new Router();
+
+// Register middleware
+app.use(logMiddleware);
 
 // Define default GET route
 router.get('*', async (ctx, next) => {
@@ -66,5 +70,5 @@ app.use(router.allowedMethods());
 // Start server
 const server = http.createServer(app.callback());
 server.listen(config.port, () => {
-    console.log(`Server started listening on port ${config.port}`);
+    logger.info(`Server started listening on port ${config.port}`);
 });

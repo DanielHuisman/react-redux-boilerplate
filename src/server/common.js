@@ -11,6 +11,7 @@ dotenv.config({
 });
 
 // Load templates
+doT.log = false;
 const templates = doT.process({
     path: path.join(__dirname, 'views')
 });
