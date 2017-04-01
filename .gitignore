@@ -3,6 +3,8 @@ build/
 dist/
 
 .env
+.env.client
+.env.server
 .flowconfig
 
 *.log

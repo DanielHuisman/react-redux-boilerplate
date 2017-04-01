@@ -44,14 +44,13 @@
         "comma-dangle": 0,
         "require-jsdoc": 0,
         "quote-props": [1, 'as-needed'],
+        "no-await-in-loop": 1,
 
         "new-cap": 0,
         "object-curly-spacing": 0,
-        "no-await-in-loop": 0,
         "no-invalid-this": 0,
         "babel/new-cap": 1,
         "babel/object-curly-spacing": 1,
-        "babel/no-await-in-loop": 1,
         "babel/no-invalid-this": 1,
 
         "import/order": 2
