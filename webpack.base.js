@@ -5,7 +5,7 @@ import webpack from 'webpack';
 // Load configuration
 const config = dotenv.config({
     path: path.join(__dirname, '.env.client')
-});
+}).parsed;
 
 const outputDir = path.join(__dirname, 'dist', 'client');
 
