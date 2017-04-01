@@ -6,6 +6,7 @@
         "import"
     ],
     "extends": [
+        "eslint:recommended",
         "google",
         "plugin:react/recommended",
         "plugin:import/errors",
