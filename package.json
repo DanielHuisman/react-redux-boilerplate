@@ -15,12 +15,13 @@
   ],
   "scripts": {
     "lint": "eslint --color src",
-    "dev": "babel-node src/server/dev.js",
-    "devold": "babel-node ./node_modules/.bin/webpack-dev-server --config webpack.development.js",
     "clean": "rimraf dist",
-    "build": "yarn run clean && yarn run build:webpack && yarn run build:static",
-    "build:webpack": "cross-env NODE_ENV=production babel-node ./node_modules/.bin/webpack -p --config webpack.production.js",
-    "build:static": "copyfiles static/* dist/static"
+    "build": "yarn run clean && yarn run build:webpack && yarn run build:static && yarn run build:server",
+    "build:webpack": "cross-env NODE_ENV=production babel-node ./node_modules/.bin/webpack --config webpack.production.js",
+    "build:static": "copyfiles static/* dist",
+    "build:server": "cross-env NODE_ENV=production babel src/server --out-dir dist/server --source-maps",
+    "dev": "babel-node src/server/dev.js",
+    "start": "cross-env NODE_ENV=production node dist/server/index.js"
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",

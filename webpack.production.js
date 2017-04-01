@@ -11,7 +11,7 @@ export default {
                 NODE_ENV: JSON.stringify('production')
             }
         }),
-        new webpack.optimize.OccurenceOrderPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
