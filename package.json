@@ -21,7 +21,7 @@
     "build:static": "copyfiles static/* dist",
     "build:server": "cross-env NODE_ENV=production babel src/server --out-dir dist/server --source-maps && yarn run build:server:templates",
     "build:server:templates": "copyfiles -u 2 src/server/views/* dist/server",
-    "dev": "babel-node src/server/dev.js",
+    "dev": "webpack-dashboard --title redux-react-boilerplate -- babel-node src/server/dev.js",
     "start": "cross-env NODE_ENV=production node dist/server/index.js"
   },
   "dependencies": {
@@ -70,6 +70,7 @@
     "react-hot-loader": "3.0.0-alpha.6",
     "rimraf": "^2.6.1",
     "webpack": "^2.3.2",
+    "webpack-dashboard": "^0.4.0",
     "webpack-dev-server": "^2.4.2"
   }
 }

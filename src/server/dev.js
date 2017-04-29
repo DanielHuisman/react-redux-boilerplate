@@ -6,6 +6,7 @@ import Router from 'koa-router';
 import serveStatic from 'koa-static-server';
 import webpack from 'webpack';
 import {devMiddleware, hotMiddleware} from 'koa-webpack-middleware';
+import DashboardPlugin from 'webpack-dashboard/plugin';
 
 import webpackConfig from '../../webpack.development';
 import {rootDir, templates} from './common';
@@ -16,6 +17,9 @@ logger.info('Server starting...');
 
 // Compile Webpack config
 const compiledWebpackConfig = webpack(webpackConfig);
+
+// Apply Webpack Dashboard plugin
+compiledWebpackConfig.apply(new DashboardPlugin());
 
 // Initialize app and router
 const app = new Koa();
