@@ -9,8 +9,8 @@ import {devMiddleware, hotMiddleware} from 'koa-webpack-middleware';
 import DashboardPlugin from 'webpack-dashboard/plugin';
 
 import webpackConfig from '../../webpack.development';
+import config, {clientConfig} from './config';
 import {rootDir, templates} from './common';
-import config from './config';
 import logger, {middleware as logMiddleware} from './logger';
 
 logger.info('Server starting...');
@@ -34,7 +34,8 @@ router.get('*', async (ctx, next) => {
 
     const data = {
         staticUrl: '/static',
-        bundleUrl: '/static'
+        bundleUrl: '/dist',
+        config: JSON.stringify(clientConfig)
     };
 
     // Render the template

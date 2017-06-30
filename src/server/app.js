@@ -10,8 +10,8 @@ import etag from 'koa-etag';
 import compress from 'koa-compress';
 import serveStatic from 'koa-static-server';
 
+import config, {clientConfig} from './config';
 import {templates} from './common';
-import config from './config';
 import {middleware as logMiddleware} from './logger';
 
 // Initialize Koa application
@@ -34,7 +34,8 @@ router.get('*', async (ctx, next) => {
 
     const data = {
         staticUrl: '/static',
-        bundleUrl: '/static'
+        bundleUrl: '/dist',
+        config: JSON.stringify(clientConfig)
     };
 
     // Render the template
@@ -49,7 +50,7 @@ app.use(convert(serveStatic({
 })));
 app.use(convert(serveStatic({
     rootDir: path.join(__dirname, '..', 'client'),
-    rootPath: '/static',
+    rootPath: '/dist',
     ...config.static
 })));
 

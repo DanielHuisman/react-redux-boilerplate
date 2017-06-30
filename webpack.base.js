@@ -1,11 +1,4 @@
 import path from 'path';
-import dotenv from 'dotenv';
-import webpack from 'webpack';
-
-// Load configuration
-const config = dotenv.config({
-    path: path.join(__dirname, '.env.client')
-}).parsed;
 
 const outputDir = path.join(__dirname, 'dist', 'client');
 
@@ -20,7 +13,7 @@ export default {
     output: {
         path: outputDir,
         filename: 'bundle.js',
-        publicPath: '/static/'
+        publicPath: '/dist/'
     },
     resolve: {
         modules: [
@@ -29,11 +22,7 @@ export default {
         ],
         extensions: ['.json', '.js', '.jsx']
     },
-    plugins: [
-        new webpack.DefinePlugin({
-            CONFIG: JSON.stringify(config)
-        })
-    ],
+    plugins: [],
     module: {
         rules: [{
             test: /\.jsx?/,

@@ -10,6 +10,9 @@
     </head>
     <body style="margin: 0px;">
         <div id="root"></div>
+        <script type="application/javascript">
+            window.clientConfig = {{=it.config}};
+        </script>
         <script type="application/javascript" src="{{=it.bundleUrl}}/bundle.js"></script>
     </body>
 </html>

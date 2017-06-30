@@ -1,8 +1,8 @@
 import http from 'http';
 import 'babel-polyfill';
 
-import app from './app';
 import config from './config';
+import app from './app';
 import logger from './logger';
 
 // Start server
