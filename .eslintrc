@@ -18,14 +18,11 @@
         "es6": true,
     },
     "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 6,
         "ecmaFeatures": {
-            "modules": true,
             "jsx": true
         }
-    },
-    "ecmaFeatures": {
-        "modules": true,
-        "jsx": true
     },
     "globals": {
         "CONFIG": true
@@ -53,7 +50,7 @@
         "babel/new-cap": 1,
         "babel/object-curly-spacing": 1,
         "babel/no-invalid-this": 1,
-
-        "import/order": 2
+        "import/order": 2,
+        "react/no-deprecated": 1
     }
 }

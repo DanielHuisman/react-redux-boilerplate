@@ -4,6 +4,10 @@ export default class App extends Component {
     static propTypes = {};
 
     render() {
-        return <div>Test app</div>;
+        return (
+            <center>
+                <h1>Test app</h1>
+            </center>
+        );
     }
 };
