@@ -7,7 +7,9 @@ import Root from './containers/Root';
 // Render a component using React
 const render = (Component) => {
     ReactDOM.render(
-        <AppContainer component={Component} />,
+        <AppContainer>
+            <Component />
+        </AppContainer>,
         document.getElementById('root')
     );
 };
