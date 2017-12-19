@@ -1,6 +1,6 @@
 import path from 'path';
 
-const outputDir = path.join(__dirname, 'dist', 'client');
+const outputDir = path.join(__dirname, 'build', 'client');
 
 export default {
     devtool: 'source-map',
