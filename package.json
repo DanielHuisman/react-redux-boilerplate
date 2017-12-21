@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "lint": "eslint --color src",
-    "clean": "rimraf dist",
+    "clean": "rimraf build",
     "build": "yarn run clean && yarn run build:webpack && yarn run build:static && yarn run build:server",
     "build:webpack": "yarn run build:webpack:main && yarn run build:webpack:copy",
     "build:webpack:main": "cross-env NODE_ENV=production babel-node ./node_modules/.bin/webpack --config webpack.production.js",
